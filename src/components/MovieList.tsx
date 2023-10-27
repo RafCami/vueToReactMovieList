@@ -1,4 +1,4 @@
-import { FunctionComponent, Suspense, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { useGetMovies } from "../api/MoviesAPI";
 import MovieCard from "./MovieCard";
 
@@ -27,13 +27,13 @@ const MovieList: FunctionComponent<MovieListProps> = () => {
             </div>
           </div>
         </div>
-        <Suspense
+        {/* <Suspense
           fallback={
             <div className="row">
               <div className="col">Loading...</div>
             </div>
           }
-        >
+        > */}
           {!error && (
             <div className="row g-3">
               {movies
@@ -54,7 +54,7 @@ const MovieList: FunctionComponent<MovieListProps> = () => {
               <div className="col">Kan films niet laden!</div>
             </div>
           )}
-        </Suspense>
+        {/* </Suspense> */}
       </div>
     </section>
   );
